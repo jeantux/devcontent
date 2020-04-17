@@ -1,0 +1,48 @@
+<div class="">
+    <Navbar></Navbar>
+    
+    <div class="content-body-search">
+
+      <div class="column search-page">
+        <label for=""><strong>Pesquisar</strong></label>
+        <div class="field has-addons">
+          <div class="control is-expanded">
+            <input v-model="search" class="input" type="text" placeholder="Digite o que você procura">
+          </div>
+          <div class="control">
+            <button
+              v-on:click="searchData(search)"
+              class="button"
+            >
+              <i class="fa fa-search" style="color: var(--bg-primary-default);"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="channels-list">
+          <div
+            v-for="channel in channels"
+            class="shadow-default channel-item"
+          >
+          <div class="card padding-card border-radius">
+            <img v-on:click="showDetails()" class="img-default card-img-top border-radius" :src="channel.img" alt="Card image cap">
+                <h5 class="card-header-default"><strong>{{ channel.name }}</strong></h5>
+                <p class="card-text card-text-size">{{ channel.desc.substr(0, 100) }} ... </p>
+                <a class="link-default" :href="channel.urlYoutube">
+                  <i class="m-btn fa fa-youtube-play" style="font-size:48px; color:rgb(48, 40, 63);"></i>
+                </a>
+                <a class="link-default" :href="'http://github.com/' + channel.usernameGit">
+                  <i class="m-btn fa fa-github" style="font-size:48px; color:rgb(48, 40, 63);"></i>
+                </a>
+            </div>
+          </div>
+
+      </div>
+
+    </div>
+
+  <div class="footer-project">
+  </div>    
+
+</div>

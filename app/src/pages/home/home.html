@@ -1,0 +1,133 @@
+<div class="">
+    <Navbar></Navbar>
+    <div class="modal" :class="{'is-active': showModal}">
+      <div v-on:click="showDetails(false)" class="modal-background"></div>
+
+      <div class="btn-close-modal">
+        <button v-on:click="showDetails(false)" class="delete" aria-label="close btn-style-close"></button>
+      </div>
+
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <img id="img-modal" class="card-img-top border-radius" :src="dataModal.img" alt="Card image cap">
+          <div class="content-header">
+            <p class="content-header-title"><strong>{{ dataModal.name }}</strong></p>
+            <div class="tags-lags">
+              <span
+                v-for="tag in dataModal.tags"
+                class="tag is-link"
+              >
+              {{ tag }}
+              </span>
+            </div>
+          </div>
+        </header>
+        <section class="modal-card-body">
+            <div class="content-github">
+                <div class="data-git" v-show="dataModal.github.followers !== null">
+                  <span><strong>Seguidores:</strong> {{ dataModal.github.followers }}</span>
+                  <span><strong>Repositorios:</strong> {{ dataModal.github.repos }}</span>
+              </div>  
+              <div class="circle-animation" v-show="dataModal.github.followers === null"></div>
+            </div>
+
+            <div class="overflow-auto size-content-modal">
+                <p> {{ dataModal.desc }} </p>
+            </div>
+        </section>
+        <footer class="modal-card-foot">
+          <a class="link-default" :href="dataModal.urlYoutube">
+            <i class="m-btn fa fa-youtube-play" style="font-size:48px; color:rgb(48, 40, 63);"></i>
+          </a>
+          <a class="link-default" :href="'http://github.com/' + dataModal.github.username">
+              <i class="m-btn fa fa-github" style="font-size:48px; color:rgb(48, 40, 63);"></i>
+          </a>
+        </footer>
+      </div>
+    </div>
+
+    <div class="title-project columns">
+        <div class="column">
+          <h1 class="h1-content-home">DevContent</h1>
+          <h3 class="ml-2">O objetivo dessa página é organizar os melhores conteúdos de tecnologia do Brasil </h3>  
+        </div>
+
+        <div class="column search-default">
+          <div class="field has-addons">
+            <div class="control is-expanded">
+              <input v-model="search" class="input" type="text" placeholder="Digite o que você procura">
+            </div>
+            <div class="control">
+              <router-link
+                class="button"
+                :to="{path: 'search', query: {q: this.search}}"
+              >
+                <i class="fa fa-search" style="color: var(--bg-primary-default);"></i>
+              </router-link>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+    <div class="new-news">
+      <div class="card border-radius">
+        <div class="card-content">
+          <div class="columns">
+            <div class="column is-one-third">
+              <img
+                v-on:click="showDetails(true, channel)"
+                class="img-default card-img-top border-radius"
+                :src="topChannel.img"
+                alt="Card image cap"
+              >
+            </div>
+            <div class="column">
+              <div class="tags-lags">
+                <span
+                  v-for="tag in topChannel.tags"
+                  class="tag is-link"
+                >
+                {{ tag }}
+                </span>
+              </div>
+              <p class="title">
+                {{ topChannel.name }}
+              </p>
+              <p class="subtitle">
+                {{ topChannel.desc }}
+              </p>
+            </div>
+          </div>
+        </div>
+        <footer class="card-footer">
+          <button class="button is-success">Github</button>
+        </footer>
+      </div>
+
+    </div>
+    
+    <div class="channels-list">
+        <div
+          v-for="channel in channels"
+          class="shadow-default channel-item"
+        >
+        <div class="card padding-card border-radius">
+          <img v-on:click="showDetails(true, channel)" class="img-default card-img-top border-radius" :src="channel.img" alt="Card image cap">
+              <h5 class="card-header-default"><strong>{{ channel.name }}</strong></h5>
+              <p class="card-text card-text-size">{{ channel.desc.substr(0, 100) }} ... </p>
+              <a class="link-default" :href="channel.urlYoutube">
+                <i class="m-btn fa fa-youtube-play" style="font-size:48px; color:rgb(48, 40, 63);"></i>
+              </a>
+              <a class="link-default" :href="'http://github.com/' + channel.usernameGit">
+                <i class="m-btn fa fa-github" style="font-size:48px; color:rgb(48, 40, 63);"></i>
+              </a>
+            </div>
+          </div>
+
+    </div>
+
+  <div class="footer-project">
+  </div>    
+
+</div>

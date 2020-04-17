@@ -1,0 +1,213 @@
+body {
+    background: var(--bg-page);
+}
+
+h1, h2, h3 {
+    font-family: var(--font-primary-default);
+}
+
+h3 {
+    color: var(--bg-secondary-default) !important;
+}
+
+#app {
+    margin: 0;
+    padding: 0;
+}
+
+.m-btn{
+    transition: linear .3s;
+}
+
+.link-default {
+    margin-left: 2px;
+}
+
+.title-project {
+    margin-top: 50px;
+    background: var(--bg-primary-default);
+    padding: 12px;
+}
+
+.new-news {
+    padding: 40px;
+}
+
+.search-page {
+    padding: 30px;
+    margin-top: auto;
+    margin-bottom: auto;
+    background-color: #ccc;
+}
+
+.h1-content-home {
+    font-size: 3em;
+    color: white;
+}
+
+.m-btn:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.shadow-default {
+    box-shadow: #ccc 5px 5px 10px 1px;
+}
+
+.img-default:hover {
+    cursor: pointer;
+}
+
+.card-img-top {
+    width: 300px;
+}
+
+.card-text-size {
+    height: 100px;
+}
+
+span.tag.is-link {
+    margin-left: 5px;
+}
+
+.footer-project {
+    margin-top: 50px;
+    background: var(--bg-primary-default);
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-bottom: 0;
+    height: 40px;
+}
+.footer-project p {
+    color: white;
+    text-align: center;
+}
+
+.card-header-default {
+    font-size: 1.5em;
+}
+
+.padding-card {
+    padding: 10px;
+}
+
+/* showmodal */
+
+.size-body-default {
+    height: 300px;
+}
+
+.details {
+    background: var(--bg-secondary-default);
+    border-radius: var(--border-radius-default);
+    width: 80%;
+    height: 80%;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.content-github {
+    background: white;
+    height: 10%;
+    padding: 10px;
+}
+
+.content-github span {
+    margin-left: 10px;
+}
+
+.data-modal {
+    height: 100%;    
+    margin: 0 auto;
+    border-radius: var(--border-radius-default);
+}
+
+#img-modal {
+    width: 100px;
+    height: 100px;
+}
+
+#close-default {
+    position: absolute;
+    margin-top: -25px;
+    background: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    padding-right: 9px;
+    padding-top: 4px;
+}
+
+#close-default:hover {
+    cursor: pointer;
+    font-weight: 900;
+    color: white;
+    background: #333;
+}
+
+.size-content-modal {
+    height: 45%;
+    padding-top: 10px;
+}
+
+.btn-botton-showmodal {
+    height: 10%;
+}
+
+.channels-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding-right: 40px;
+    padding-left: 40px;
+}
+
+.channel-item {
+    width: 18rem;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.title-showmodal {
+    background: var(--bg-primary-default);
+    padding: 12px;
+    height: 35%;
+    border-top-left-radius: var(--border-radius-default);
+    border-top-right-radius: var(--border-radius-default);
+}
+
+.channel-item > img {
+    width: 100%;
+}
+
+.circle-animation {
+    background: var(--bg-primary-default);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: var(--loading-default);
+    position: relative;
+}
+
+.data-git {
+    text-align: center;
+}
+
+.content-body-search {
+    margin-top: 50px;
+}
+
+@media (max-width: 600px) {
+    .details h1 {font-size: 2em !important;}
+    .data-git {
+        margin-top: -5px;
+    }
+    .content-github span {
+        margin-left: 2px;
+        font-size: 14px;
+    }
+
+    .modal-card {
+        padding: 15px;
+    }
+}
