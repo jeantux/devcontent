@@ -32,7 +32,6 @@ def _channels():
     username = request.args.get('username')
     where = ''
 
-    print(textsearch)
     if (textsearch != '' and textsearch != None):
         where = """
             and (upper(c."name") like upper('%{textsearch}%')
@@ -56,7 +55,7 @@ def _channels():
                       from channels c
                       left join "types" t on (c.id_types = t.id)
                       where 1 = 1
-                """ + where)
+                """)
 
     columns = (
         "name", "desc", "urlyoutube", "usernamegit", "img", "tags", "type"
@@ -74,6 +73,32 @@ def _channels():
 
 @app.route('/topchannel')
 def _topchannel():
-    return jsonify({ 'channel': topchannel })
+    cur = conn.cursor()
+
+    cur.execute(""" select c."name",
+                           c."desc",
+                           c.urlyoutube,
+                           c.usernamegit,
+                           c.img,
+                           c.tags,
+                           t.name as type
+                      from channels c
+                      left join "types" t on (c.id_types = t.id)
+                      where c.id = 5
+                """)
+
+    columns = (
+        "name", "desc", "urlyoutube", "usernamegit", "img", "tags", "type"
+    )
+
+    rows = cur.fetchall()
+    channels = []
+
+    for row in rows:
+        channels.append(dict(zip(columns, row)))
+    
+    return jsonify({ 'channel': channels[0] })
+
+    conn.close()
 
 app.run(port=3000, use_reloader=True)

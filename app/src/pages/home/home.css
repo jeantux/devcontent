@@ -25,8 +25,9 @@ h3 {
 
 .title-project {
     margin-top: 50px;
-    background: var(--bg-primary-default);
+    background: linear-gradient(45deg, #5d3e61, #64469e);
     padding: 12px;
+    height: 250px;
 }
 
 .new-news {

@@ -1,6 +1,7 @@
 @import url('./about.css');
 @import url('./colors.css');
 @import url('./general-setups.css');
+@import url('./langs-colors.css');
 
 .border-radius {
     border-radius: var(--border-radius-default);

@@ -13,7 +13,7 @@
             <div class="tags-lags">
               <span
                 v-for="tag in channel.tags"
-                class="tag is-link"
+                :class="tag + ' tag is-link'"
               >
               {{ tag }}
               </span>

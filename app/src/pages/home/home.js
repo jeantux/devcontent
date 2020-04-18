@@ -49,6 +49,7 @@ export default {
             axios({method: 'get', url: this.urlAPI + 'topchannel'})
             .then(res => {
                 this.topChannel = res.data.channel
+                this.topChannel.tags = this.topChannel.tags.split(',')
             })
             .catch(err => {
                 window.console.log(err)
@@ -76,7 +77,7 @@ export default {
                 this.dataModal.name = channel.name
                 this.dataModal.desc = channel.desc
                 this.dataModal.img = channel.img
-                this.dataModal.urlYoutube = channel.urlYoutube
+                this.dataModal.urlyoutube = channel.urlyoutube
                 this.dataModal.github.username = channel.usernamegit
                 this.dataModal.tags = channel.tags
                 this.dataModal.github.repos = null
@@ -88,6 +89,7 @@ export default {
             axios({method: 'get', url: this.urlAPI+'channels', params: {filter: ''}})
                 .then(res => {
                     this.channels = res.data.channels
+                    
                     for (const index in this.channels) {
                         const channel = this.channels[index];
                         channel.tags = channel.tags.split(',')
