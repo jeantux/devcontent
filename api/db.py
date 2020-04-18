@@ -1,6 +1,8 @@
 channels = [
         {
             'name': 'Fabio Akita',
+            'type': 'content',
+            'tags': ['ruby', 'java', 'python', 'linux', 'backend', 'elixir'],
             'desc': '''Este é o canal "AKITANDO" onde eu, Fabio Akita, também conhecido como @AkitaOnRails vou falar dos assuntos que sempre gostei. Quem me acompanha no meu blog, e redes sociais como Facebook, Twitter e Instagram já tem uma idéia do que esperar daqui.
         
             Vou tentar publicar no mínimo um vídeo por semana enquanto tento gerenciar meu tempo entre minhas duas empresas, OmniTrade e Codeminer 42, e o evento que organizo anualmente, a THE CONF.
@@ -11,7 +13,9 @@ channels = [
             'img': 'https://yt3.ggpht.com/a/AATXAJw-bX2VxsG-v9rnFdx-3T9YxbZqshX2QCWghw=s288-c-k-c0xffffffff-no-rj-mo'
         },
         {
-            'name': 'Jean Carlos', 
+            'name': 'Jean Carlos',
+            'type': 'lesson',
+            'tags': ['javascript', 'node', 'vuejs', 'python'],
             'desc': 'No meu canal falo sobre diversos conteudos, variando entre Linux, open source, programação ... ', 
             'urlYoutube': 'https://www.youtube.com/channel/UCjSFU-9JUt2ATyjomcsRgSQ?view_as=subscriber', 
             'usernameGit': "jeaanca",
@@ -19,6 +23,8 @@ channels = [
         },
         {
             'name': 'Eduardo Mendes',
+            'type': 'lesson',
+            'tags': ['python'],
             'desc': '''Um canal sobre Python e desenvolvimento de software de uma maneira geral.''' ,
             'urlYoutube': 'https://www.youtube.com/user/mendesesduardo/featured', 
             'usernameGit': 'dunossauro',
@@ -26,6 +32,8 @@ channels = [
         },
         {
             'name': 'Código Fonte TV',
+            'type': 'content',
+            'tags': ['all'],
             'desc': '''Este é o canal Código Fonte (que começou com um Blog) e que nós chamamos carinhosamente de CDFTV ou o canal dos CDFs no Youtube.
             Nossos CDFs são os nossos "CóDigo Fonters"!
             
@@ -45,7 +53,9 @@ channels = [
             'img': 'https://yt3.ggpht.com/a/AATXAJxpQzXaz5gar8MXTTanUGvDI9UrI7xgLN_Elw=s288-c-k-c0xffffffff-no-rj-mo'
         },
         {
-            'name': 'Filipe Deschamps', 
+            'name': 'Filipe Deschamps',
+            'type': 'content',
+            'tags': ['all'],
             'desc': '''Vou deixar você apaixonado por programação! Vídeo toda segunda às 11h!
 
             Meu último emprego antes de decidir focar 100% no YouTube foi ser CTO do Pagar.me. Lá tive o prazer de ser responsável por um time com mais de 100 pessoas e aprendi MUITO sobre gestão (principalmente gestão de times grandes) e sobre como lidar com tecnologia em escala. Ambos conhecimentos que quero compartilhar nesse canal.
@@ -61,7 +71,9 @@ channels = [
             'img': 'https://yt3.ggpht.com/a/AATXAJyi6syFivU5JTxaAtUDUFD829HiQmcX2iv_5g=s288-c-k-c0xffffffff-no-rj-mo'
         },
         {
-            'name': 'UpInside', 
+            'name': 'UpInside',
+            'type': 'content',
+            'tags': ['php'],
             'desc': '''Seja bem-vindo(a) ao canal da UpInside Treinamentos, eleita a melhor escola de desenvolvimento web, programação e marketing digital com reconhecimento em mais de 17 países pela Latin American Quality Institute por 5 anos consecutivos.
 
             Aqui você encontra nossos conteúdos gratuitos trazendo o que existe de mais moderno e preparando você para o mercado, seja para conquistar uma vaga, atuar com freelancer ou empreender sua agência web.
@@ -75,6 +87,8 @@ channels = [
         },
         {
             'name': 'Alura',
+            'type': 'lesson',
+            'tags': ['all'],
             'desc': '''Quer se atualizar em tudo que acontece em tecnologia, design e negócios digitais? O Canal da Alura traz videos todas as semanas, com conteúdo que vai desde o Hipsters Ponto Tube até as primeiras aulas dos cursos online da Alura
 
             https://www.alura.com.br
@@ -90,6 +104,8 @@ channels = [
         },
         {
             'name': 'Renato Mota',
+            'type': 'lesson',
+            'tags': ['flutter'],
             'desc': 'Focado em Desenvolvimento Mobile, e show room de novas tecnologias, focado em Ui e Ux.', 
             'urlYoutube': 'https://www.youtube.com/channel/UCd-vLa_qcKve3CsDFlYiygA', 
             'usernameGit': 'RenatoLucasMota',
@@ -97,6 +113,8 @@ channels = [
         },
         {
             'name': 'CollabCode',
+            'type': 'content',
+            'tags': ['javascript', 'css'],
             'desc': '''CollabCode é uma comunidade focada em compartilhar conhecimento! Os criadores são a Joviane Jardim (https://twitter.com/jovianejardim) e o Marco Bruno (https://twitter.com/marcobrunobr) e os moderadores dessa comunidade são a Flávia Guterres (https://twitter.com/flaviaguterres) e o Felipe Machado (https://twitter.com/FeelipePM).
 
             Se quiser saber mais detalhes sobre o curso "Do Front ao End" do Marco Bruno, é só entrar em https://dofrontaoend.collabcode.training/investimento que lá tem a ementa completa.''', 
@@ -105,19 +123,9 @@ channels = [
             'img': 'https://yt3.ggpht.com/a/AATXAJx1r1eq8s2lyCqZtUXKL3eECWUflE462sG7mw=s288-c-k-c0xffffffff-no-rj-mo'
         },
         {
-            'name': 'CodeShow',
-            'desc': '''Esté é o canal "CodeShow" onde eu, Bruno Rocha, Engenheiro de Software na Red Hat, compartilho experiências com foco no código e pretendo compartilhar este contéudo em texto no codeshow.com.br, em áudio no anchor.fm/codeshow e também aqui no Youtube em formato de videos e lives.
-
-            Pretendo publicar pelo menos um conteúdo por semana, e este conteúdo poderá aparecer em uma dessa 3 mídias.
-            
-            Para ficar sabendo acompanhe nas redes sociais abaixo.. e por favor inscreva-se aqui no canal!
-            ''', 
-            'urlYoutube': 'https://www.youtube.com/channel/UCMre98RDRijOX_fvG1gnsYg', 
-            'usernameGit': 'codeshow',
-            'img': 'https://yt3.ggpht.com/a/AATXAJx6sqMsJ96lf-XonKzn-z-mskK2BZHg7zYQAg=s176-c-k-c0x00ffffff-no-rj'
-        },
-        {
             'name': 'Rocketseat',
+            'type': 'lesson',
+            'tags': ['node', 'javascript', 'react'],
             'desc': '''Mais do que uma plataforma de educação em tecnologia, somos uma comunidade incrível de programadores em busca do próximo nível 🚀
 
             http://comunidade.rocketseat.com.br''', 
@@ -127,6 +135,8 @@ channels = [
         },
         {
             'name': 'DevPleno',
+            'type': 'lesson',
+            'tags': ['nodejs'],
             'desc': '''Dicas, sacadas e tutoriais para você tornar-se um profissional completo ou um devPleno.
 
             Tulio Faria é mestre em Sistemas de Informação pela USP e criador do DevPleno. Iniciou sua carreira como professor ainda jovem, com apenas 18 anos em um curso técnico; depois disso, foram 11 anos em sala de aula formando desenvolvedores fullstack no sul de Minas Gerais. Hoje, é empresário e também atua em uma empresa de grande porte do exterior. 
@@ -139,3 +149,19 @@ channels = [
             'img': 'https://yt3.ggpht.com/a/AATXAJz53U6c0xWggAYGSGiNmINfYuwGmcdnd_Qkkw=s176-c-k-c0x00ffffff-no-rj'
         }
     ]
+
+
+topchannel = {
+            'name': 'CodeShow',
+            'type': 'lesson',
+            'tags': ['rust', 'python', 'flask'],
+            'desc': '''Esté é o canal "CodeShow" onde eu, Bruno Rocha, Engenheiro de Software na Red Hat, compartilho experiências com foco no código e pretendo compartilhar este contéudo em texto no codeshow.com.br, em áudio no anchor.fm/codeshow e também aqui no Youtube em formato de videos e lives.
+
+            Pretendo publicar pelo menos um conteúdo por semana, e este conteúdo poderá aparecer em uma dessa 3 mídias.
+            
+            Para ficar sabendo acompanhe nas redes sociais abaixo.. e por favor inscreva-se aqui no canal!
+            ''', 
+            'urlYoutube': 'https://www.youtube.com/channel/UCMre98RDRijOX_fvG1gnsYg', 
+            'usernamegit': 'codeshow',
+            'img': 'https://yt3.ggpht.com/a/AATXAJx6sqMsJ96lf-XonKzn-z-mskK2BZHg7zYQAg=s176-c-k-c0x00ffffff-no-rj'
+        }
