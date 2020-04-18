@@ -8,13 +8,14 @@ export default {
     },
     data () {
         return {
-            urlAPI: 'http://localhost:3000/',
+            urlAPI: '',
             showModal: false,
             search: '',
             channels: []
         }
     },
     created () {
+        this.urlAPI = process.env.VUE_APP_API_BASE_URL
         this.goSearch()
         this.getChannels()        
     },

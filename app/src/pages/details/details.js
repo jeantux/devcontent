@@ -8,6 +8,7 @@ export default {
     },
     data () {
         return {
+            urlAPI : '',
             username: '',
             channel: {
                 name: '',
@@ -26,6 +27,7 @@ export default {
         }
     },
     created () {
+        this.urlAPI = process.env.VUE_APP_API_BASE_URL
         this.getContentParams()
         this.getRepos()
         this.getUser()
@@ -54,7 +56,7 @@ export default {
         },
         
         getUser () {
-            axios({ method: 'get', url: 'http://localhost:3000/channels',params: {username: this.username} })
+            axios({ method: 'get', url: this.urlAPI+'channels',params: {username: this.username} })
             .then(res => {
                 this.channel = res.data.channels[0]
                 this.channel.tags = this.channel.tags.split(',')

@@ -5,7 +5,7 @@ import './../node_modules/bulma/css/bulma.css';
 import 'font-awesome/css/font-awesome.css';
 import './assets/css/index.css'
 
-Vue.config.productionTip = false
+Vue.config.productionTip = true
 
 new Vue({
   router,
