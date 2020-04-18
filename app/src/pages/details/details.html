@@ -9,12 +9,17 @@
       <div class="tile is-vertical is-4 global-profile">
         <div class="tile is-info">
           <div class="data-profile">
-            <img src="https://yt3.ggpht.com/a/AATXAJx6sqMsJ96lf-XonKzn-z-mskK2BZHg7zYQAg=s176-c-k-c0x00ffffff-no-rj" alt="">
-            <h1 class="title"> {{ channel.name  }} </h1>
-            <h1 class="subtitle"> {{ channel.desc  }} </h1>
-            <div class="tags">
-
+            <img class="img-details" :src="channel.img" alt="">
+            <div class="tags-lags">
+              <span
+                v-for="tag in channel.tags"
+                class="tag is-link"
+              >
+              {{ tag }}
+              </span>
             </div>
+            <h1 class="title"> {{ channel.name  }} </h1>
+            <h2 class="subtitle is-6"> {{ channel.desc  }} </h2>
             <div class="social-media">
               <ul>
               </ul>
@@ -26,16 +31,44 @@
      <div class="columns content-detail">
       <div class="column">
         <h1 class="title">Projetos</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid alias consequatur corrupti deserunt ullam adipisci esse unde autem nulla. Ex provident quibusdam, recusandae necessitatibus quam aspernatur ipsum eius facilis dicta.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid alias consequatur corrupti deserunt ullam adipisci esse unde autem nulla. Ex provident quibusdam, recusandae necessitatibus quam aspernatur ipsum eius facilis dicta.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid alias consequatur corrupti deserunt ullam adipisci esse unde autem nulla. Ex provident quibusdam, recusandae necessitatibus quam aspernatur ipsum eius facilis dicta.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid alias consequatur corrupti deserunt ullam adipisci esse unde autem nulla. Ex provident quibusdam, recusandae necessitatibus quam aspernatur ipsum eius facilis dicta.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid alias consequatur corrupti deserunt ullam adipisci esse unde autem nulla. Ex provident quibusdam, recusandae necessitatibus quam aspernatur ipsum eius facilis dicta.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid alias consequatur corrupti deserunt ullam adipisci esse unde autem nulla. Ex provident quibusdam, recusandae necessitatibus quam aspernatur ipsum eius facilis dicta.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid alias consequatur corrupti deserunt ullam adipisci esse unde autem nulla. Ex provident quibusdam, recusandae necessitatibus quam aspernatur ipsum eius facilis dicta.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid alias consequatur corrupti deserunt ullam adipisci esse unde autem nulla. Ex provident quibusdam, recusandae necessitatibus quam aspernatur ipsum eius facilis dicta.
-        </p>
+        
+        <div class="repos-columns">
+          <div
+            v-for="repo in repos"
+            class="card"            
+          >
+
+          <div class="card margin-top">
+            <header class="card-header">
+              <p class="card-header-title">
+                {{ repo.name }}
+              </p>
+              <span class="stars-proj">
+                {{ repo.stargazers_count }}
+                <li class="fa fa-star"></li>
+              </span>
+              <a :href="repo.html_url" class="card-header-icon" aria-label="more options">
+                <span class="icon">
+                  <i class="fa fa-github" aria-hidden="true"></i>
+                </span>
+              </a>
+            </header>
+            <div class="card-content">
+              <div class="content">
+                <span class="tag is-link" v-if="repo.language !== null">
+                  {{ repo.language }}
+                </span><br>
+                {{ repo.description }}
+                <br>
+              </div>
+            </div>
+            <footer class="card-footer">
+              <a :href="repo.html_url" class="card-footer-item">ver repositório</a>
+            </footer>
+          </div>
+        </div>
+        </div>
+
       </div>
      </div>
     </div>

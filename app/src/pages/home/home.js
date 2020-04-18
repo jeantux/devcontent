@@ -22,7 +22,7 @@ export default {
                     followers: null,
                     repos: null,
                 },
-                urlYoutube: ''
+                urlyoutube: ''
             },
             dataModal: {
                 name: '',
@@ -35,7 +35,7 @@ export default {
                     followers: null,
                     repos: null,
                 },
-                urlYoutube: ''
+                urlyoutube: ''
             },
             channels: []
         }
@@ -54,6 +54,13 @@ export default {
                 window.console.log(err)
             })
         },
+        goSearch () {
+            this.$router.push({ name: 'search', query: { q: this.search } })
+        },
+        goDetails (username) {
+            window.console.log(username)
+            this.$router.push({ name: 'details', query: { u: username } })
+        },
         getContentGithub (username) {
             axios({method: 'get', url: `https://api.github.com/users/${username}`})
             .then(res => {
@@ -70,17 +77,21 @@ export default {
                 this.dataModal.desc = channel.desc
                 this.dataModal.img = channel.img
                 this.dataModal.urlYoutube = channel.urlYoutube
-                this.dataModal.github.username = channel.usernameGit
+                this.dataModal.github.username = channel.usernamegit
                 this.dataModal.tags = channel.tags
                 this.dataModal.github.repos = null
                 this.dataModal.github.followers = null
-                this.getContentGithub(channel.username)
+                this.getContentGithub(channel.usernamegit)
             }
         },
         getChannels () {
-            axios({method: 'get', url: this.urlAPI+'channels'})
+            axios({method: 'get', url: this.urlAPI+'channels', params: {filter: ''}})
                 .then(res => {
                     this.channels = res.data.channels
+                    for (const index in this.channels) {
+                        const channel = this.channels[index];
+                        channel.tags = channel.tags.split(',')
+                    }
                 })
                 .catch(err => window.console.log(err))
         }

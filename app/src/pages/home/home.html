@@ -36,11 +36,14 @@
             </div>
         </section>
         <footer class="modal-card-foot">
-          <a class="link-default" :href="dataModal.urlYoutube">
+          <a class="link-default" :href="dataModal.urlyoutube">
             <i class="m-btn fa fa-youtube-play" style="font-size:48px; color:rgb(48, 40, 63);"></i>
           </a>
           <a class="link-default" :href="'http://github.com/' + dataModal.github.username">
               <i class="m-btn fa fa-github" style="font-size:48px; color:rgb(48, 40, 63);"></i>
+          </a>
+          <a v-on:click="goDetails(dataModal.github.username)" class="link-default">
+            <i class="m-btn fa fa-info-circle" style="font-size:48px; color:rgb(48, 40, 63);"></i>
           </a>
         </footer>
       </div>
@@ -55,15 +58,17 @@
         <div class="column search-default">
           <div class="field has-addons">
             <div class="control is-expanded">
-              <input v-model="search" class="input" type="text" placeholder="Digite o que você procura">
+              <input
+                v-model="search"
+                v-on:keyup.enter="goSearch()"
+                class="input"
+                type="text"
+                placeholder="Digite o que você procura">
             </div>
             <div class="control">
-              <router-link
-                class="button"
-                :to="{path: 'search', query: {q: this.search}}"
-              >
+              <button class="button" v-on:click="goSearch()">
                 <i class="fa fa-search" style="color: var(--bg-primary-default);"></i>
-              </router-link>
+              </button>
             </div>
           </div>
         </div>
@@ -76,7 +81,7 @@
           <div class="columns">
             <div class="column is-one-third">
               <img
-                v-on:click="showDetails(true, channel)"
+                 v-on:click="goDetails(topChannel.usernamegit)"
                 class="img-default card-img-top border-radius"
                 :src="topChannel.img"
                 alt="Card image cap"
@@ -101,7 +106,7 @@
           </div>
         </div>
         <footer class="card-footer">
-          <button class="button is-success">Github</button>
+          <button class="button">Github</button>
         </footer>
       </div>
 
@@ -116,10 +121,10 @@
           <img v-on:click="showDetails(true, channel)" class="img-default card-img-top border-radius" :src="channel.img" alt="Card image cap">
               <h5 class="card-header-default"><strong>{{ channel.name }}</strong></h5>
               <p class="card-text card-text-size">{{ channel.desc.substr(0, 100) }} ... </p>
-              <a class="link-default" :href="channel.urlYoutube">
+              <a class="link-default" :href="channel.urlyoutube">
                 <i class="m-btn fa fa-youtube-play" style="font-size:48px; color:rgb(48, 40, 63);"></i>
               </a>
-              <a class="link-default" :href="'http://github.com/' + channel.usernameGit">
+              <a class="link-default" :href="'http://github.com/' + channel.usernamegit">
                 <i class="m-btn fa fa-github" style="font-size:48px; color:rgb(48, 40, 63);"></i>
               </a>
             </div>

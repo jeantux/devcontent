@@ -20,7 +20,7 @@ h3 {
 }
 
 .link-default {
-    margin-left: 2px;
+    margin-left: 8px;
 }
 
 .title-project {
@@ -51,6 +51,12 @@ h3 {
 
 .shadow-default {
     box-shadow: #ccc 5px 5px 10px 1px;
+}
+
+.img-default{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
 .img-default:hover {
@@ -109,8 +115,7 @@ span.tag.is-link {
     display: inline;
 }
 
-.btn-close-modal > button{  
-    margin-top: -60px;
+.btn-close-modal > button{
     margin-left: 20px;
     background-color: rgb(92, 92, 92);
 }

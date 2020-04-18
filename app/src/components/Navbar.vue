@@ -4,14 +4,18 @@
     <a class="navbar-item" href="https://devcontent.tech">
       <img src="@/assets/img/logo.png" alt="Logo devcontent">
     </a>
-    <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+    <div
+      class="navbar-burger burger"
+      data-target="navbarExampleTransparentExample"
+      v-on:click="toogleMenu()"
+    >
       <span></span>
       <span></span>
       <span></span>
     </div>
   </div>
 
-  <div id="navbarExampleTransparentExample" class="navbar-menu">
+  <div id="navbarExampleTransparentExample" class="navbar-menu is-active" v-show="showMenu" >
     <div class="navbar-start">
         <router-link class="navbar-item" to="/">Home</router-link>
       <div class="navbar-item has-dropdown is-hoverable">
@@ -47,7 +51,17 @@
 
 <script>
 export default {
-    name: 'Navbar'
+    name: 'Navbar',
+    data () {
+      return {
+        showMenu: true
+      }
+    },
+    methods: {
+      toogleMenu () {
+        this.showMenu = !this.showMenu
+      }
+    }
 }
 </script>
 

@@ -16,9 +16,21 @@
     width: 100%;
 }
 
+.img-details{
+    border-radius: var(--border-radius-default);
+}
+
 .content-detail {
     margin-left: 20px;
     margin-top: 50px;
-    height: 100vh;
+    min-height: 100vh;
     padding-right: 30px;
+}
+
+.stars-proj {
+    margin-top: 10px;
+}
+
+.margin-top {
+    margin-top: 10px;
 }
