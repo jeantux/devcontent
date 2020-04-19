@@ -52,7 +52,7 @@
     <div class="title-project columns">
         <div class="column">
           <h1 class="h1-content-home">DevContent</h1>
-          <h3 class="ml-2">O objetivo dessa página é organizar os melhores conteúdos de tecnologia do Brasil </h3>  
+          <h3 class="ml-2">O objetivo dessa página é centrtalizar os melhores conteúdos de tecnologia do Brasil </h3>  
         </div>
 
         <div class="column search-default">
@@ -78,6 +78,9 @@
     <div class="new-news">
       <div class="card border-radius">
         <div class="card-content">
+          <span class="main-star">
+            <li class="fa fa-star" style="color: rgb(230, 208, 17); font-size: 40px;"></li>
+          </span>
           <div class="columns">
             <div class="column is-one-third">
               <img
@@ -87,11 +90,11 @@
                 alt="Card image cap"
               >
             </div>
-            <div class="column">
+            <div class="column column-content-news">              
               <div class="tags-lags">
                 <span
                   v-for="tag in topChannel.tags"
-                  :class="tag + ' tag is-link'"
+                  :class="tag + ' tag-new-news tag is-link'"
                 >
                 {{ tag }}
                 </span>
@@ -105,9 +108,6 @@
             </div>
           </div>
         </div>
-        <footer class="card-footer">
-          <button class="button">Github</button>
-        </footer>
       </div>
 
     </div>
@@ -118,17 +118,17 @@
           class="shadow-default channel-item"
         >
         <div class="card padding-card border-radius">
-          <img v-on:click="showDetails(true, channel)" class="img-default card-img-top border-radius" :src="channel.img" alt="Card image cap">
-              <h5 class="card-header-default"><strong>{{ channel.name }}</strong></h5>
-              <p class="card-text card-text-size">{{ channel.desc.substr(0, 100) }} ... </p>
-              <a class="link-default" :href="channel.urlyoutube">
-                <i class="m-btn fa fa-youtube-play" style="font-size:48px; color:rgb(48, 40, 63);"></i>
-              </a>
-              <a class="link-default" :href="'http://github.com/' + channel.usernamegit">
-                <i class="m-btn fa fa-github" style="font-size:48px; color:rgb(48, 40, 63);"></i>
-              </a>
-            </div>
+            <img v-on:click="showDetails(true, channel)" class="img-default card-img-top border-radius" :src="channel.img" alt="Card image cap">
+            <h5 class="card-header-default"><strong>{{ channel.name }}</strong></h5>
+            <p class="card-text card-text-size">{{ channel.desc.substr(0, 100) }} ... </p>
+            <a class="link-default" :href="channel.urlyoutube">
+              <i class="m-btn fa fa-youtube-play" style="font-size:48px; color:rgb(48, 40, 63);"></i>
+            </a>
+            <a class="link-default" :href="'http://github.com/' + channel.usernamegit">
+              <i class="m-btn fa fa-github" style="font-size:48px; color:rgb(48, 40, 63);"></i>
+            </a>
           </div>
+        </div>
 
     </div>
 
