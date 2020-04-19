@@ -108,4 +108,5 @@ dist
 api/__pycache__
 api/venv
 api/config_pg.py
+api/wsgi.py
 
