@@ -1,5 +1,5 @@
 # from db import channels
-from db import topchannel
+from config_pg import config
 from flask import Flask
 from flask import jsonify
 from flask import request
@@ -10,11 +10,11 @@ app = Flask(__name__)
 cors = CORS(app)
 
 conn = psycopg2.connect(
-    host="localhost",
-    database="devcontent",
-    user="postgres",
-    password="mainroot",
-    port=5432
+    host=config['host'],
+    database=config['database'],
+    user=config['user'],
+    password=config['password'],
+    port=config['port']
 )
 
 @app.route('/')
@@ -101,4 +101,4 @@ def _topchannel():
 
     conn.close()
 
-app.run(port=3000, use_reloader=True)
+app.run(port=5000, use_reloader=True)
