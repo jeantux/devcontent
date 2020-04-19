@@ -1,0 +1,5 @@
+import sys
+
+sys.path.insert(0, "--- execute pwd and paste content here. ---")
+
+from app import app as application
