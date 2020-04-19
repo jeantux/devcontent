@@ -52,7 +52,6 @@ export default {
                 this.topChannel = res.data.channel
                 if (this.topChannel.tags !== null) {
                     this.topChannel.tags = this.topChannel.tags.split(',')
-                    this.topChannel.desc = this.topChannel.desc.substr(0, 350) + ' ...'
                 }
             })
             .catch(err => {

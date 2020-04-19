@@ -102,8 +102,9 @@
               <p class="title">
                 {{ topChannel.name }}
               </p>
+              
               <p class="subtitle">
-                {{ topChannel.desc }}
+                <span v-html="topChannel.desc"></span>
               </p>
             </div>
           </div>
