@@ -55,7 +55,7 @@ def _channels():
                       from channels c
                       left join "types" t on (c.id_types = t.id)
                       where 1 = 1
-                """)
+                """ + where)
 
     columns = (
         "name", "desc", "urlyoutube", "usernamegit", "img", "tags", "type"
