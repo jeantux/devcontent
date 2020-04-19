@@ -21,7 +21,6 @@ export default {
     },
     methods: {
         showDetails (channel) {
-            window.console.log(channel)
             this.$router.push({ name: 'details', query: { u: channel.usernamegit } })
         },
         goSearch () {

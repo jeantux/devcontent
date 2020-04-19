@@ -40,6 +40,10 @@ h3 {
     float: right;
 }
 
+.star-channel {
+    margin-right: 10px;
+}
+
 .search-default {
     padding: 30px;
     margin-top: auto;

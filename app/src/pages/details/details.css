@@ -20,6 +20,10 @@
     border-radius: var(--border-radius-default);
 }
 
+.margin-rigth {
+    margin-right: 5px;
+}
+
 .content-detail {
     margin-left: 20px;
     margin-top: 50px;

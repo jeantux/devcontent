@@ -16,7 +16,7 @@ export default {
                 type: '',
                 tags: [],
                 desc: '',
-                img: '',
+                img: '',                
                 github: {
                     username: '',
                     followers: null,
@@ -50,8 +50,10 @@ export default {
             axios({method: 'get', url: this.urlAPI + 'topchannel'})
             .then(res => {
                 this.topChannel = res.data.channel
-                this.topChannel.tags = this.topChannel.tags.split(',')
-                this.topChannel.desc = this.topChannel.desc.substr(0, 350) + ' ...'
+                if (this.topChannel.tags !== null) {
+                    this.topChannel.tags = this.topChannel.tags.split(',')
+                    this.topChannel.desc = this.topChannel.desc.substr(0, 350) + ' ...'
+                }
             })
             .catch(err => {
                 window.console.log(err)
@@ -61,7 +63,6 @@ export default {
             this.$router.push({ name: 'search', query: { q: this.search } })
         },
         goDetails (username) {
-            window.console.log(username)
             this.$router.push({ name: 'details', query: { u: username } })
         },
         getContentGithub (username) {
@@ -93,8 +94,10 @@ export default {
                     this.channels = res.data.channels
                     
                     for (const index in this.channels) {
-                        const channel = this.channels[index];
-                        channel.tags = channel.tags.split(',')
+                        const channel = this.channels[index]
+                        if (channel.tags !== null) {
+                            channel.tags = channel.tags.split(',')
+                        }
                     }
                 })
                 .catch(err => window.console.log(err))

@@ -1,10 +1,21 @@
+/* tags langs */
 .python{ background-color: rgb(199, 179, 0) !important; }
 .node{ background-color: rgb(2, 160, 55) !important; }
 .nodejs{ background-color: rgb(2, 160, 55) !important; }
-.javscript{ background-color: rgb(1, 94, 39) !important; }
+.javscript{ background-color: rgb(2, 131, 56) !important; }
+.typeScript{ background-color: rgb(112, 182, 0) !important; }
 .ruby{ background-color: rgb(85, 0, 85) !important; }
-.php{ background-color: rgb(47, 0, 75) !important; }
+.php{ background-color: rgb(81, 0, 128) !important; }
 .rust{ background-color: rgb(49, 37, 0) !important; }
 .css{ background-color: rgb(0, 23, 124) !important; }
 .react{ background-color: rgb(85, 0, 119) !important; }
 .javascript{ background-color: rgb(99, 89, 1) !important; }
+.emacs{ background-color: rgb(99, 1, 39) !important; }
+.vim{ background-color: rgb(6, 97, 3) !important; }
+.flask{ background-color: rgb(145, 142, 0) !important; }
+.bryton{ background-color: rgb(2, 0, 99) !important; }
+.linux{ background-color: rgb(3, 0, 168) !important; }
+
+/* tags type content */
+.aulas { background: #f136c7 !important; }
+.informativo { background-color: rgb(0, 66, 207) !important; }

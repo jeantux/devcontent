@@ -51,14 +51,15 @@ def _channels():
                            c.usernamegit,
                            c.img,
                            c.tags,
-                           t.name as type
+                           t.name as type,
+                           c.recomended
                       from channels c
                       left join "types" t on (c.id_types = t.id)
                       where 1 = 1
-                """ + where)
+                """ + where + " order by c.recomended desc, c.id_types asc ")
 
     columns = (
-        "name", "desc", "urlyoutube", "usernamegit", "img", "tags", "type"
+        "name", "desc", "urlyoutube", "usernamegit", "img", "tags", "type", "recomended"
     )
 
     rows = cur.fetchall()
@@ -67,24 +68,24 @@ def _channels():
     for row in rows:
         channels.append(dict(zip(columns, row)))
     
+    cur.close()
     return jsonify({ 'channels': channels })
-
-    conn.close()
 
 @app.route('/topchannel')
 def _topchannel():
     cur = conn.cursor()
 
-    cur.execute(""" select c."name",
-                           c."desc",
-                           c.urlyoutube,
-                           c.usernamegit,
-                           c.img,
-                           c.tags,
-                           t.name as type
-                      from channels c
-                      left join "types" t on (c.id_types = t.id)
-                      where c.id = 5
+    cur.execute("""  select c."name",
+                            cf.description,
+                            c.urlyoutube,
+                            c.usernamegit,
+                            c.img,
+                            c.tags,
+                            t."name" as type
+                    from channels_featured cf
+                    inner join channels c on (c.id = cf.id_channel)
+                    left join "types"  t on (c.id_types = t.id)
+                    where cf.id = (select max(o.id) from channels_featured o)
                 """)
 
     columns = (
@@ -97,8 +98,8 @@ def _topchannel():
     for row in rows:
         channels.append(dict(zip(columns, row)))
     
+    cur.close()
     return jsonify({ 'channel': channels[0] })
 
-    conn.close()
 
 app.run(port=5000, use_reloader=True)

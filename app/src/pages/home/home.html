@@ -15,9 +15,9 @@
             <div class="tags-lags">
               <span
                 v-for="tag in dataModal.tags"
-                :class="tag + ' tag is-link'"
+                :class="tag + ' tag is-link child-color-white'"
               >
-              {{ tag }}
+              <a :href="'https://pt.wikipedia.org/wiki/' + tag">{{ tag }}</a>
               </span>
             </div>
           </div>
@@ -51,8 +51,8 @@
 
     <div class="title-project columns">
         <div class="column">
-          <h1 class="h1-content-home">DevContent</h1>
-          <h3 class="ml-2">O objetivo dessa página é centrtalizar os melhores conteúdos de tecnologia do Brasil </h3>  
+          <h1 class="h1-content-home">Descubra os melhores canais</h1>
+          <h3 class="ml-2">O objetivo dessa página é centralizar os melhores conteúdos de tecnologia da internet</h3>  
         </div>
 
         <div class="column search-default">
@@ -63,7 +63,7 @@
                 v-on:keyup.enter="goSearch()"
                 class="input"
                 type="text"
-                placeholder="Digite o que você procura">
+                placeholder="Canais, Linguagens de Programação ...">
             </div>
             <div class="control">
               <button class="button" v-on:click="goSearch()">
@@ -94,9 +94,9 @@
               <div class="tags-lags">
                 <span
                   v-for="tag in topChannel.tags"
-                  :class="tag + ' tag-new-news tag is-link'"
-                >
-                {{ tag }}
+                  :class="tag + ' child-color-white tag-new-news tag is-link'"
+                >                
+                <a :href="'https://pt.wikipedia.org/wiki/' + tag">{{ tag }}</a>                
                 </span>
               </div>
               <p class="title">
@@ -118,15 +118,17 @@
           class="shadow-default channel-item"
         >
         <div class="card padding-card border-radius">
-            <img v-on:click="showDetails(true, channel)" class="img-default card-img-top border-radius" :src="channel.img" alt="Card image cap">
-            <h5 class="card-header-default"><strong>{{ channel.name }}</strong></h5>
-            <p class="card-text card-text-size">{{ channel.desc.substr(0, 100) }} ... </p>
-            <a class="link-default" :href="channel.urlyoutube">
-              <i class="m-btn fa fa-youtube-play" style="font-size:48px; color:rgb(48, 40, 63);"></i>
-            </a>
-            <a class="link-default" :href="'http://github.com/' + channel.usernamegit">
-              <i class="m-btn fa fa-github" style="font-size:48px; color:rgb(48, 40, 63);"></i>
-            </a>
+          <img v-on:click="showDetails(true, channel)" class="img-default card-img-top border-radius" :src="channel.img" alt="Card image cap">
+          <span v-if="channel.recomended" class="star-channel"><i class="fa fa-star" style="font-size: 20px; color: gold;"></i></span>  
+          <span class="tag-recomendation" :class="channel.type">{{ channel.type }}</span>
+          <h5 class="card-header-default"><strong>{{ channel.name }}</strong></h5>
+          <p class="card-text card-text-size">{{ channel.desc.substr(0, 100) }} ... </p>
+          <a class="link-default" :href="channel.urlyoutube">
+            <i class="m-btn fa fa-youtube-play" style="font-size:48px; color:rgb(48, 40, 63);"></i>
+          </a>
+          <a class="link-default" :href="'http://github.com/' + channel.usernamegit">
+            <i class="m-btn fa fa-github" style="font-size:48px; color:rgb(48, 40, 63);"></i>
+          </a>
           </div>
         </div>
 

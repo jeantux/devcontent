@@ -54,6 +54,10 @@ h3 {
     box-shadow: #ccc 5px 5px 10px 1px;
 }
 
+.star-channel {
+    margin-right: 10px;
+}
+
 .img-default:hover {
     cursor: pointer;
 }

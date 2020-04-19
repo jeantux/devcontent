@@ -13,9 +13,9 @@
             <div class="tags-lags">
               <span
                 v-for="tag in channel.tags"
-                :class="tag + ' tag is-link'"
+                :class="tag + ' child-color-white margin-rigth tag is-link'"
               >
-              {{ tag }}
+              <a :href="'https://pt.wikipedia.org/wiki/' + tag">{{ tag }}</a>  
               </span>
             </div>
             <h1 class="title"> {{ channel.name  }} </h1>
@@ -30,7 +30,7 @@
 
      <div class="columns content-detail">
       <div class="column">
-        <h1 class="title">Projetos</h1>
+        <h1 class="title">Projetos do Github</h1>
         
         <div class="repos-columns">
           <div
