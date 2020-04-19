@@ -55,7 +55,10 @@
             </header>
             <div class="card-content">
               <div class="content">
-                <span class="tag is-link" v-if="repo.language !== null">
+                <span                  
+                  :class="tag + ' tag is-link'"
+                  v-if="repo.language !== null"
+                >
                   {{ repo.language }}
                 </span><br>
                 {{ repo.description }}
