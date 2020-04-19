@@ -1,9 +1,9 @@
 <template>
 <nav class="nav-devcontent navbar is-transparent is-fixed-top">
   <div class="navbar-brand">
-    <a class="navbar-item" href="https://devcontent.tech">
+    <router-link class="navbar-item" to="/">
       <img src="@/assets/img/logo.png" alt="Logo devcontent">
-    </a>
+    </router-link>
     <div
       class="navbar-burger burger"
       data-target="navbarExampleTransparentExample"
@@ -15,7 +15,7 @@
     </div>
   </div>
 
-  <div id="navbarExampleTransparentExample" class="navbar-menu is-active" v-show="showMenu" >
+  <div id="navbarExampleTransparentExample" v-bind:class="{ 'is-active' : showMenu }" class="navbar-menu">
     <div class="navbar-start">
         <router-link class="navbar-item" to="/">Home</router-link>
       <div class="navbar-item has-dropdown is-hoverable">
@@ -54,7 +54,7 @@ export default {
     name: 'Navbar',
     data () {
       return {
-        showMenu: true
+        showMenu: false
       }
     },
     methods: {
